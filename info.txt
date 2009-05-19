@@ -1,0 +1,18 @@
+M = (Q,Sigma,Gamma,Delta,q0,Beta,F)
+
+Q := Conjunto dos estados.
+Sigma := Conjunto dos simbolos. (U+03A3)
+Gamma := Conjunto dos simbolos da fita. (U+0393)
+Delta := funções de transição. (U+0384)
+	Delta(q,X)
+		q := Estado atual.
+		X := Simbolo da fita.
+			Delta(q,X) := (P,Y,D)
+				P := Proximo estado.
+				Y := Simbolo da fita que será escrito.
+				D := Direção do movimento (L/R).
+					L := Esquerda
+					R := Direita 
+q0 := Estado inicial.
+Beta := Simbolo do branco. (U+03B2)
+F := Estado final.
