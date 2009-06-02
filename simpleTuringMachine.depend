@@ -346,7 +346,7 @@
 
 1238939809 /usr/include/wx-2.8/wx/gtk/app.h
 
-1243819901 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.h
+1243956560 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.h
 	<wx/stattext.h>
 	<wx/menu.h>
 	<wx/textctrl.h>
@@ -747,7 +747,7 @@
 
 1238939809 /usr/include/wx-2.8/wx/gtk/button.h
 
-1243815060 source:/home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.cpp
+1243958310 source:/home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.cpp
 	"simpleTuringMachineMain.h"
 	<wx/msgdlg.h>
 	<wx/artprov.h>

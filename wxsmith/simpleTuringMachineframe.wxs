@@ -3,7 +3,7 @@
 	<object class="wxFrame" name="simpleTuringMachineFrame">
 		<title>simple Turing Machine</title>
 		<centered>1</centered>
-		<icon>/home/jimmy/projects/simpleTuringMachine/res/stm_16x16.png</icon>
+		<icon>./res/stm_16x16.png</icon>
 		<size>514,244</size>
 		<style>wxCAPTION|wxCLOSE_BOX</style>
 		<object class="wxPanel" name="ID_PANEL1" variable="panel1" member="yes">
@@ -46,15 +46,15 @@
 				<style>wxTE_LEFT</style>
 			</object>
 			<object class="wxStaticBitmap" name="ID_STATICBITMAP2" variable="StaticBitmap2" member="yes">
-				<bitmap>/home/jimmy/projects/simpleTuringMachine/res/seta.png</bitmap>
+				<bitmap>./res/seta.png</bitmap>
 				<pos>249,36</pos>
 			</object>
 			<object class="wxStaticBitmap" name="ID_STATICBITMAP3" variable="StaticBitmap3" member="yes">
-				<bitmap>/home/jimmy/projects/simpleTuringMachine/res/seta.png</bitmap>
+				<bitmap>./res/seta.png</bitmap>
 				<pos>249,84</pos>
 			</object>
 			<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
-				<bitmap>/home/jimmy/projects/simpleTuringMachine/res/seta.png</bitmap>
+				<bitmap>./res/seta.png</bitmap>
 				<pos>249,132</pos>
 			</object>
 			<object class="wxStaticLine" name="ID_STATICLINE2" variable="StaticLine2" member="yes">
@@ -112,6 +112,11 @@
 				<size>120,34</size>
 				<handler function="OnExecPassoClick" entry="EVT_BUTTON" />
 			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+				<label>D(q00,1)=(q3,0,R)\\u0384</label>
+				<pos>216,160</pos>
+				<size>208,16</size>
+			</object>
 		</object>
 		<object class="wxMenuBar" variable="MenuBar1" member="no">
 			<object class="wxMenu" variable="Menu1" member="no">
@@ -137,6 +142,30 @@
 					<help>Sair do aplicativo</help>
 					<bitmap stock_id="wxART_QUIT" />
 					<handler function="OnQuit" entry="EVT_MENU" />
+				</object>
+			</object>
+			<object class="wxMenu" variable="Menu3" member="yes">
+				<label>&amp;Controle</label>
+				<object class="wxMenuItem" name="idMenuEntrada" variable="MenuItem5" member="yes">
+					<label>Entrada</label>
+					<accel>Ctrl+S</accel>
+					<help>Defini a string de entrada da MT</help>
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuExecutar" variable="MenuItem6" member="yes">
+					<label>Executar</label>
+					<accel>Ctrl+E</accel>
+					<help>Executa a MT.</help>
+				</object>
+				<object class="wxMenuItem" name="idMenuExecutarPasso" variable="MenuItem7" member="yes">
+					<label>Executar Passo</label>
+					<accel>Ctrl+N</accel>
+					<help>Executa um passo na MT.</help>
+				</object>
+				<object class="wxMenuItem" name="idMenuPause" variable="MenuItem8" member="yes">
+					<label>Pausar</label>
+					<accel>Ctrl+P</accel>
+					<help>Pausa um MT em execução.</help>
 				</object>
 			</object>
 			<object class="wxMenu" variable="Menu2" member="no">

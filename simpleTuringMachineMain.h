@@ -62,10 +62,15 @@ class simpleTuringMachineFrame: public wxFrame
         static const long ID_STATICTEXT1;
         static const long ID_EXEC;
         static const long ID_EXECPASSO;
+        static const long ID_STATICTEXT2;
         static const long ID_PANEL1;
         static const long idMenuAbrir;
         static const long idMenuClose;
         static const long idMenuQuit;
+        static const long idMenuEntrada;
+        static const long idMenuExecutar;
+        static const long idMenuExecutarPasso;
+        static const long idMenuPause;
         static const long idMenuAbout;
         static const long ID_STATUSBAR1;
         //*)
@@ -73,9 +78,14 @@ class simpleTuringMachineFrame: public wxFrame
         //(*Declarations(simpleTuringMachineFrame)
         wxStaticBitmap* StaticBitmap2;
         wxPanel* panel1;
+        wxMenuItem* MenuItem8;
         wxTextCtrl* tape1left;
+        wxMenuItem* MenuItem7;
         wxTextCtrl* tape2left;
+        wxMenuItem* MenuItem5;
+        wxStaticText* StaticText2;
         wxTextCtrl* tape3centro;
+        wxMenu* Menu3;
         wxStaticBitmap* StaticBitmap1;
         wxTextCtrl* tape1centro;
         wxMenuItem* MenuItem4;
@@ -87,6 +97,7 @@ class simpleTuringMachineFrame: public wxFrame
         wxMenuItem* MenuItem3;
         wxTextCtrl* tape2right;
         wxStatusBar* StatusBar1;
+        wxMenuItem* MenuItem6;
         wxStaticLine* StaticLine3;
         wxStaticLine* StaticLine1;
         wxSlider* velocidade;
