@@ -118,7 +118,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     StaticText1 = new wxStaticText(panel1, ID_STATICTEXT1, _("Velocidade"), wxPoint(432,152), wxSize(72,19), 0, _T("ID_STATICTEXT1"));
     Exec = new wxButton(panel1, ID_EXEC, _("Executar"), wxPoint(8,152), wxSize(80,34), 0, wxDefaultValidator, _T("ID_EXEC"));
     ExecPasso = new wxButton(panel1, ID_EXECPASSO, _("Executar Passo"), wxPoint(88,152), wxSize(120,34), 0, wxDefaultValidator, _T("ID_EXECPASSO"));
-    StaticText2 = new wxStaticText(panel1, ID_STATICTEXT2, _("\u03B4(q0,1) = (q3,\u03B2,R)"), wxPoint(216,160), wxSize(208,16), 0, _T("ID_STATICTEXT2"));
+    StaticText2 = new wxStaticText(panel1, ID_STATICTEXT2, _("\\u0384(q00,1)=(q3,0,R)"), wxPoint(216,160), wxSize(208,16), 0, _T("ID_STATICTEXT2"));
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
     MenuItem3 = new wxMenuItem(Menu1, idMenuAbrir, _("Abrir\tCtrl+O"), _("Abrir Maquina de Turing Codificada"), wxITEM_NORMAL);
@@ -134,13 +134,17 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     MenuBar1->Append(Menu1, _("&Arquivo"));
     Menu3 = new wxMenu();
     MenuItem5 = new wxMenuItem(Menu3, idMenuEntrada, _("Entrada\tCtrl+S"), _("Defini a string de entrada da MT"), wxITEM_NORMAL);
+    MenuItem5->SetBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_NEW")),wxART_OTHER));
     Menu3->Append(MenuItem5);
     Menu3->AppendSeparator();
     MenuItem6 = new wxMenuItem(Menu3, idMenuExecutar, _("Executar\tCtrl+E"), _("Executa a MT."), wxITEM_NORMAL);
+    MenuItem6->SetBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_GO_FORWARD")),wxART_OTHER));
     Menu3->Append(MenuItem6);
     MenuItem7 = new wxMenuItem(Menu3, idMenuExecutarPasso, _("Executar Passo\tCtrl+N"), _("Executa um passo na MT."), wxITEM_NORMAL);
+    MenuItem7->SetBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_GO_FORWARD")),wxART_OTHER));
     Menu3->Append(MenuItem7);
     MenuItem8 = new wxMenuItem(Menu3, idMenuPause, _("Pausar\tCtrl+P"), _("Pausa um MT em execução."), wxITEM_NORMAL);
+    MenuItem8->SetBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_CROSS_MARK")),wxART_OTHER));
     Menu3->Append(MenuItem8);
     MenuBar1->Append(Menu3, _("&Controle"));
     Menu2 = new wxMenu();

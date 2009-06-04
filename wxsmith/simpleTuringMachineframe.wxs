@@ -113,7 +113,7 @@
 				<handler function="OnExecPassoClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
-				<label>D(q00,1)=(q3,0,R)\\u0384</label>
+				<label>\u0384(q00,1)=(q3,0,R)</label>
 				<pos>216,160</pos>
 				<size>208,16</size>
 			</object>
@@ -150,22 +150,26 @@
 					<label>Entrada</label>
 					<accel>Ctrl+S</accel>
 					<help>Defini a string de entrada da MT</help>
+					<bitmap stock_id="wxART_NEW" />
 				</object>
 				<object class="separator" />
 				<object class="wxMenuItem" name="idMenuExecutar" variable="MenuItem6" member="yes">
 					<label>Executar</label>
 					<accel>Ctrl+E</accel>
 					<help>Executa a MT.</help>
+					<bitmap stock_id="wxART_GO_FORWARD" />
 				</object>
 				<object class="wxMenuItem" name="idMenuExecutarPasso" variable="MenuItem7" member="yes">
 					<label>Executar Passo</label>
 					<accel>Ctrl+N</accel>
 					<help>Executa um passo na MT.</help>
+					<bitmap stock_id="wxART_GO_FORWARD" />
 				</object>
 				<object class="wxMenuItem" name="idMenuPause" variable="MenuItem8" member="yes">
 					<label>Pausar</label>
 					<accel>Ctrl+P</accel>
 					<help>Pausa um MT em execução.</help>
+					<bitmap stock_id="wxART_CROSS_MARK" />
 				</object>
 			</object>
 			<object class="wxMenu" variable="Menu2" member="no">

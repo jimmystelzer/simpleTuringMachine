@@ -41,6 +41,10 @@
 		<Unit filename="simpleTuringMachineApp.h" />
 		<Unit filename="simpleTuringMachineMain.cpp" />
 		<Unit filename="simpleTuringMachineMain.h" />
+		<Unit filename="tape.cpp" />
+		<Unit filename="tape.h" />
+		<Unit filename="turingMachine.cpp" />
+		<Unit filename="turingMachine.h" />
 		<Unit filename="wxsmith/simpleTuringMachineframe.wxs" />
 		<Extensions>
 			<AutoVersioning>
