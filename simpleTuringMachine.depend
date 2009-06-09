@@ -346,7 +346,7 @@
 
 1238939809 /usr/include/wx-2.8/wx/gtk/app.h
 
-1243960361 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.h
+1244587642 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.h
 	<wx/stattext.h>
 	<wx/menu.h>
 	<wx/textctrl.h>
@@ -356,7 +356,9 @@
 	<wx/statbmp.h>
 	<wx/button.h>
 	<wx/frame.h>
+	<wx/timer.h>
 	<wx/statusbr.h>
+	"turingMachine.h"
 
 1238939808 /usr/include/wx-2.8/wx/menu.h
 	"wx/defs.h"
@@ -907,11 +909,40 @@
 
 1238939809 /usr/include/wx-2.8/wx/gtk/slider.h
 
-1244082492 source:/home/jimmy/projects/simpleTuringMachine/tape.cpp
+1244083513 source:/home/jimmy/projects/simpleTuringMachine/tape.cpp
 	"tape.h"
 
-1244080888 /home/jimmy/projects/simpleTuringMachine/tape.h
+1244083513 /home/jimmy/projects/simpleTuringMachine/tape.h
 	<string>
 
-1244082449 source:/home/jimmy/projects/simpleTuringMachine/turingMachine.cpp
+1244083513 source:/home/jimmy/projects/simpleTuringMachine/turingMachine.cpp
+	"turingMachine.h"
+
+1244083513 /home/jimmy/projects/simpleTuringMachine/turingMachine.h
+	<string>
+	"tape.h"
+
+1238939808 /usr/include/wx-2.8/wx/timer.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/longlong.h"
+	"wx/event.h"
+	"wx/stopwatch.h"
+	"wx/window.h"
+	"wx/msw/timer.h"
+	"wx/motif/timer.h"
+	"wx/gtk/timer.h"
+	"wx/gtk1/timer.h"
+	"wx/generic/timer.h"
+	"wx/cocoa/timer.h"
+	"wx/mac/timer.h"
+	"wx/os2/timer.h"
+
+1238939808 /usr/include/wx-2.8/wx/stopwatch.h
+	"wx/defs.h"
+	"wx/longlong.h"
+
+1238939809 /usr/include/wx-2.8/wx/gtk/timer.h
+
+1238939808 /usr/include/wx-2.8/wx/generic/timer.h
 

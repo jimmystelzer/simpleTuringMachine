@@ -20,8 +20,11 @@
 #include <wx/statbmp.h>
 #include <wx/button.h>
 #include <wx/frame.h>
+#include <wx/timer.h>
 #include <wx/statusbr.h>
 //*)
+
+#include "turingMachine.h"
 
 class simpleTuringMachineFrame: public wxFrame
 {
@@ -40,6 +43,7 @@ class simpleTuringMachineFrame: public wxFrame
         void OnExecClick(wxCommandEvent& event);
         void OnExecPassoClick(wxCommandEvent& event);
         void OnvelocidadeCmdScroll(wxScrollEvent& event);
+        void OnTimer(wxTimerEvent& event);
         //*)
 
         //(*Identifiers(simpleTuringMachineFrame)
@@ -73,6 +77,7 @@ class simpleTuringMachineFrame: public wxFrame
         static const long idMenuPause;
         static const long idMenuAbout;
         static const long ID_STATUSBAR1;
+        static const long ID_TIMER1;
         //*)
 
         //(*Declarations(simpleTuringMachineFrame)
@@ -104,6 +109,7 @@ class simpleTuringMachineFrame: public wxFrame
         wxTextCtrl* tape3left;
         wxTextCtrl* tape3right;
         wxStaticBitmap* StaticBitmap3;
+        wxTimer Timer1;
         wxButton* ExecPasso;
         //*)
 

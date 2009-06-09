@@ -113,7 +113,7 @@
 				<handler function="OnExecPassoClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
-				<label>\u0384(q00,1)=(q3,0,R)</label>
+				<label>\\u0384(q00,1)=(q3,0,R)</label>
 				<pos>216,160</pos>
 				<size>208,16</size>
 			</object>
@@ -187,6 +187,10 @@
 			<fields>1</fields>
 			<widths>-1</widths>
 			<styles>wxSB_NORMAL</styles>
+		</object>
+		<object class="wxTimer" name="ID_TIMER1" variable="Timer1" member="yes">
+			<interval>100</interval>
+			<handler function="OnTimer" entry="EVT_TIMER" />
 		</object>
 	</object>
 </wxsmith>

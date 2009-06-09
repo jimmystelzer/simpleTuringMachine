@@ -24,8 +24,8 @@ enum wxbuildinfoformat {
 
 wxString wxbuildinfo(wxbuildinfoformat format)
 {
-    wxString wxbuild(wxVERSION_STRING);
-
+    wxString wxbuild(_T("Simple Turing Machine\n"));
+    wxbuild << wxVERSION_STRING;
     if (format == long_f )
     {
 #if defined(__WXMSW__)
@@ -40,6 +40,8 @@ wxString wxbuildinfo(wxbuildinfoformat format)
         wxbuild << _T("-ANSI build");
 #endif // wxUSE_UNICODE
     }
+    wxbuild << _T("\n\nDeveloped by Jimmy Pinto Stelzer");
+    wxbuild << _T("\n\nDistributed under GNU-GPL (Read COPYING and/or README files for informations).");
 
     return wxbuild;
 }
@@ -75,6 +77,7 @@ const long simpleTuringMachineFrame::idMenuExecutarPasso = wxNewId();
 const long simpleTuringMachineFrame::idMenuPause = wxNewId();
 const long simpleTuringMachineFrame::idMenuAbout = wxNewId();
 const long simpleTuringMachineFrame::ID_STATUSBAR1 = wxNewId();
+const long simpleTuringMachineFrame::ID_TIMER1 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(simpleTuringMachineFrame,wxFrame)
@@ -159,6 +162,8 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     StatusBar1->SetFieldsCount(1,__wxStatusBarWidths_1);
     StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
     SetStatusBar(StatusBar1);
+    Timer1.SetOwner(this, ID_TIMER1);
+    Timer1.Start(100, false);
     Center();
 
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_TOP|wxEVT_SCROLL_BOTTOM|wxEVT_SCROLL_LINEUP|wxEVT_SCROLL_LINEDOWN|wxEVT_SCROLL_PAGEUP|wxEVT_SCROLL_PAGEDOWN|wxEVT_SCROLL_THUMBTRACK|wxEVT_SCROLL_THUMBRELEASE|wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
@@ -168,6 +173,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     Connect(idMenuClose,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnClose);
     Connect(idMenuQuit,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnQuit);
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnAbout);
+    Connect(ID_TIMER1,wxEVT_TIMER,(wxObjectEventFunction)&simpleTuringMachineFrame::OnTimer);
     //*)
 }
 
@@ -185,7 +191,7 @@ void simpleTuringMachineFrame::OnQuit(wxCommandEvent& event)
 void simpleTuringMachineFrame::OnAbout(wxCommandEvent& event)
 {
     wxString msg = wxbuildinfo(long_f);
-    wxMessageBox(msg, _("Sobre sMT"));
+    wxMessageBox(msg, _("Sobre sTM"));
 }
 
 void simpleTuringMachineFrame::OnOpen(wxCommandEvent& event)
@@ -211,4 +217,9 @@ void simpleTuringMachineFrame::OnExecPassoClick(wxCommandEvent& event)
 void simpleTuringMachineFrame::OnvelocidadeCmdScroll(wxScrollEvent& event)
 {
     //Velocidade
+}
+
+void simpleTuringMachineFrame::OnTimer(wxTimerEvent& event)
+{
+    this->velocidade->SetValue(5);
 }
