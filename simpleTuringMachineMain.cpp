@@ -102,26 +102,26 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     	SetIcon(FrameIcon);
     }
     panel1 = new wxPanel(this, ID_PANEL1, wxPoint(32,80), wxSize(514,248), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
-    tape1left = new wxTextCtrl(panel1, ID_TEXTCTRL1, _("0"), wxPoint(8,8), wxSize(240,27), wxTE_RIGHT, wxDefaultValidator, _T("ID_TEXTCTRL1"));
-    tape1centro = new wxTextCtrl(panel1, ID_TEXTCTRL2, _("0"), wxPoint(248,8), wxSize(18,27), wxTE_CENTRE, wxDefaultValidator, _T("ID_TEXTCTRL2"));
-    tape1right = new wxTextCtrl(panel1, ID_TEXTCTRL3, _("0"), wxPoint(266,8), wxSize(240,27), wxTE_LEFT, wxDefaultValidator, _T("ID_TEXTCTRL3"));
-    tape2left = new wxTextCtrl(panel1, ID_TEXTCTRL4, _("0"), wxPoint(8,56), wxSize(240,27), wxTE_RIGHT, wxDefaultValidator, _T("ID_TEXTCTRL4"));
-    tape2centro = new wxTextCtrl(panel1, ID_TEXTCTRL5, _("0"), wxPoint(248,56), wxSize(18,27), wxTE_CENTRE, wxDefaultValidator, _T("ID_TEXTCTRL5"));
-    tape2right = new wxTextCtrl(panel1, ID_TEXTCTRL6, _("0"), wxPoint(266,56), wxSize(240,27), wxTE_LEFT, wxDefaultValidator, _T("ID_TEXTCTRL6"));
+    tape1left = new wxTextCtrl(panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(8,8), wxSize(240,27), wxTE_RIGHT, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+    tape1centro = new wxTextCtrl(panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(248,8), wxSize(18,27), wxTE_CENTRE, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+    tape1right = new wxTextCtrl(panel1, ID_TEXTCTRL3, wxEmptyString, wxPoint(266,8), wxSize(240,27), wxTE_LEFT, wxDefaultValidator, _T("ID_TEXTCTRL3"));
+    tape2left = new wxTextCtrl(panel1, ID_TEXTCTRL4, wxEmptyString, wxPoint(8,56), wxSize(240,27), wxTE_RIGHT, wxDefaultValidator, _T("ID_TEXTCTRL4"));
+    tape2centro = new wxTextCtrl(panel1, ID_TEXTCTRL5, wxEmptyString, wxPoint(248,56), wxSize(18,27), wxTE_CENTRE, wxDefaultValidator, _T("ID_TEXTCTRL5"));
+    tape2right = new wxTextCtrl(panel1, ID_TEXTCTRL6, wxEmptyString, wxPoint(266,56), wxSize(240,27), wxTE_LEFT, wxDefaultValidator, _T("ID_TEXTCTRL6"));
     StaticBitmap2 = new wxStaticBitmap(panel1, ID_STATICBITMAP2, wxBitmap(wxImage(_T("./res/seta.png"))), wxPoint(249,36), wxDefaultSize, 0, _T("ID_STATICBITMAP2"));
     StaticBitmap3 = new wxStaticBitmap(panel1, ID_STATICBITMAP3, wxBitmap(wxImage(_T("./res/seta.png"))), wxPoint(249,84), wxDefaultSize, 0, _T("ID_STATICBITMAP3"));
     StaticBitmap1 = new wxStaticBitmap(panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("./res/seta.png"))), wxPoint(249,132), wxDefaultSize, 0, _T("ID_STATICBITMAP1"));
     StaticLine2 = new wxStaticLine(panel1, ID_STATICLINE2, wxPoint(8,53), wxSize(498,-1), wxLI_HORIZONTAL, _T("ID_STATICLINE2"));
     StaticLine3 = new wxStaticLine(panel1, ID_STATICLINE3, wxPoint(8,101), wxSize(498,-1), wxLI_HORIZONTAL, _T("ID_STATICLINE3"));
     StaticLine1 = new wxStaticLine(panel1, ID_STATICLINE1, wxPoint(8,149), wxSize(498,-1), wxLI_HORIZONTAL, _T("ID_STATICLINE1"));
-    tape3left = new wxTextCtrl(panel1, ID_TEXTCTRL7, _("0"), wxPoint(8,104), wxSize(240,27), wxTE_RIGHT, wxDefaultValidator, _T("ID_TEXTCTRL7"));
-    tape3centro = new wxTextCtrl(panel1, ID_TEXTCTRL8, _("0"), wxPoint(248,104), wxSize(18,27), wxTE_CENTRE, wxDefaultValidator, _T("ID_TEXTCTRL8"));
-    tape3right = new wxTextCtrl(panel1, ID_TEXTCTRL9, _("0"), wxPoint(266,104), wxSize(240,27), wxTE_LEFT, wxDefaultValidator, _T("ID_TEXTCTRL9"));
+    tape3left = new wxTextCtrl(panel1, ID_TEXTCTRL7, wxEmptyString, wxPoint(8,104), wxSize(240,27), wxTE_RIGHT, wxDefaultValidator, _T("ID_TEXTCTRL7"));
+    tape3centro = new wxTextCtrl(panel1, ID_TEXTCTRL8, wxEmptyString, wxPoint(248,104), wxSize(18,27), wxTE_CENTRE, wxDefaultValidator, _T("ID_TEXTCTRL8"));
+    tape3right = new wxTextCtrl(panel1, ID_TEXTCTRL9, wxEmptyString, wxPoint(266,104), wxSize(240,27), wxTE_LEFT, wxDefaultValidator, _T("ID_TEXTCTRL9"));
     velocidade = new wxSlider(panel1, ID_VELOCIDADE, 1, 1, 10, wxPoint(432,168), wxSize(72,19), 0, wxDefaultValidator, _T("ID_VELOCIDADE"));
     StaticText1 = new wxStaticText(panel1, ID_STATICTEXT1, _("Velocidade"), wxPoint(432,152), wxSize(72,19), 0, _T("ID_STATICTEXT1"));
     Exec = new wxButton(panel1, ID_EXEC, _("Executar"), wxPoint(8,152), wxSize(80,34), 0, wxDefaultValidator, _T("ID_EXEC"));
     ExecPasso = new wxButton(panel1, ID_EXECPASSO, _("Executar Passo"), wxPoint(88,152), wxSize(120,34), 0, wxDefaultValidator, _T("ID_EXECPASSO"));
-    StaticText2 = new wxStaticText(panel1, ID_STATICTEXT2, _("\\u0384(q00,1)=(q3,0,R)"), wxPoint(216,160), wxSize(208,16), 0, _T("ID_STATICTEXT2"));
+    StaticText2 = new wxStaticText(panel1, ID_STATICTEXT2, _("\u03b4(q00,1)=(q3,0,R)"), wxPoint(216,160), wxSize(208,16), 0, _T("ID_STATICTEXT2"));
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
     MenuItem3 = new wxMenuItem(Menu1, idMenuAbrir, _("Abrir\tCtrl+O"), _("Abrir Maquina de Turing Codificada"), wxITEM_NORMAL);
@@ -163,7 +163,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
     SetStatusBar(StatusBar1);
     Timer1.SetOwner(this, ID_TIMER1);
-    Timer1.Start(100, false);
+    Timer1.Start(200, false);
     Center();
 
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_TOP|wxEVT_SCROLL_BOTTOM|wxEVT_SCROLL_LINEUP|wxEVT_SCROLL_LINEDOWN|wxEVT_SCROLL_PAGEUP|wxEVT_SCROLL_PAGEDOWN|wxEVT_SCROLL_THUMBTRACK|wxEVT_SCROLL_THUMBRELEASE|wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
@@ -221,5 +221,8 @@ void simpleTuringMachineFrame::OnvelocidadeCmdScroll(wxScrollEvent& event)
 
 void simpleTuringMachineFrame::OnTimer(wxTimerEvent& event)
 {
-    this->velocidade->SetValue(5);
+    this->velocidade->SetValue(i++);
+    if (i==11){
+        i=1;
+    }
 }

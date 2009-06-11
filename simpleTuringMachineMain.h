@@ -34,7 +34,7 @@ class simpleTuringMachineFrame: public wxFrame
         virtual ~simpleTuringMachineFrame();
 
     private:
-
+        int i;
         //(*Handlers(simpleTuringMachineFrame)
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);

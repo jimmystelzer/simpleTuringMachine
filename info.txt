@@ -3,7 +3,7 @@ M = (Q,Sigma,Gamma,Delta,q0,Beta,F)
 Q := Conjunto dos estados.
 Sigma := Conjunto dos simbolos. (U+03A3)
 Gamma := Conjunto dos simbolos da fita. (U+0393)
-Delta := funções de transição. (U+0384)
+Delta := funções de transição. (U+03B4)
 	Delta(q,X)
 		q := Estado atual.
 		X := Simbolo da fita.

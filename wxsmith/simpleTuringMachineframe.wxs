@@ -10,37 +10,31 @@
 			<pos>32,80</pos>
 			<size>514,248</size>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="tape1left" member="yes">
-				<value>0</value>
 				<pos>8,8</pos>
 				<size>240,27</size>
 				<style>wxTE_RIGHT</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="tape1centro" member="yes">
-				<value>0</value>
 				<pos>248,8</pos>
 				<size>18,27</size>
 				<style>wxTE_CENTRE</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="tape1right" member="yes">
-				<value>0</value>
 				<pos>266,8</pos>
 				<size>240,27</size>
 				<style>wxTE_LEFT</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="tape2left" member="yes">
-				<value>0</value>
 				<pos>8,56</pos>
 				<size>240,27</size>
 				<style>wxTE_RIGHT</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="tape2centro" member="yes">
-				<value>0</value>
 				<pos>248,56</pos>
 				<size>18,27</size>
 				<style>wxTE_CENTRE</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="tape2right" member="yes">
-				<value>0</value>
 				<pos>266,56</pos>
 				<size>240,27</size>
 				<style>wxTE_LEFT</style>
@@ -70,19 +64,16 @@
 				<size>498,-1</size>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL7" variable="tape3left" member="yes">
-				<value>0</value>
 				<pos>8,104</pos>
 				<size>240,27</size>
 				<style>wxTE_RIGHT</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL8" variable="tape3centro" member="yes">
-				<value>0</value>
 				<pos>248,104</pos>
 				<size>18,27</size>
 				<style>wxTE_CENTRE</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL9" variable="tape3right" member="yes">
-				<value>0</value>
 				<pos>266,104</pos>
 				<size>240,27</size>
 				<style>wxTE_LEFT</style>
@@ -113,7 +104,7 @@
 				<handler function="OnExecPassoClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
-				<label>\\u0384(q00,1)=(q3,0,R)</label>
+				<label>u0384(q00,1)=(q3,0,R)</label>
 				<pos>216,160</pos>
 				<size>208,16</size>
 			</object>
@@ -189,7 +180,7 @@
 			<styles>wxSB_NORMAL</styles>
 		</object>
 		<object class="wxTimer" name="ID_TIMER1" variable="Timer1" member="yes">
-			<interval>100</interval>
+			<interval>200</interval>
 			<handler function="OnTimer" entry="EVT_TIMER" />
 		</object>
 	</object>
