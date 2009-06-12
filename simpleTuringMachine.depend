@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1243813788 source:/home/jimmy/projects/simpleTuringMachine/simpleTuringMachineApp.cpp
+1244038119 source:/home/jimmy/projects/simpleTuringMachine/simpleTuringMachineApp.cpp
 	"simpleTuringMachineApp.h"
 	"simpleTuringMachineMain.h"
 	<wx/image.h>
 
-1243813788 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineApp.h
+1244038119 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineApp.h
 	<wx/app.h>
 
 1238939807 /usr/include/wx-2.8/wx/app.h
@@ -346,18 +346,20 @@
 
 1238939809 /usr/include/wx-2.8/wx/gtk/app.h
 
-1244745949 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.h
+1244773561 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.h
 	<wx/stattext.h>
 	<wx/menu.h>
 	<wx/textctrl.h>
 	<wx/statline.h>
 	<wx/slider.h>
 	<wx/panel.h>
+	<wx/filedlg.h>
 	<wx/statbmp.h>
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/timer.h>
 	<wx/statusbr.h>
+	<wx/textdlg.h>
 	"turingMachine.h"
 
 1238939808 /usr/include/wx-2.8/wx/menu.h
@@ -749,11 +751,12 @@
 
 1238939809 /usr/include/wx-2.8/wx/gtk/button.h
 
-1244079560 source:/home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.cpp
+1244773436 source:/home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.cpp
 	"simpleTuringMachineMain.h"
 	<wx/msgdlg.h>
 	<wx/artprov.h>
 	<wx/bitmap.h>
+	<wx/font.h>
 	<wx/intl.h>
 	<wx/image.h>
 	<wx/string.h>
@@ -909,16 +912,16 @@
 
 1238939809 /usr/include/wx-2.8/wx/gtk/slider.h
 
-1244083513 source:/home/jimmy/projects/simpleTuringMachine/tape.cpp
+1244773398 source:/home/jimmy/projects/simpleTuringMachine/tape.cpp
 	"tape.h"
 
-1244083513 /home/jimmy/projects/simpleTuringMachine/tape.h
+1244773157 /home/jimmy/projects/simpleTuringMachine/tape.h
 	<string>
 
-1244083513 source:/home/jimmy/projects/simpleTuringMachine/turingMachine.cpp
+1244773377 source:/home/jimmy/projects/simpleTuringMachine/turingMachine.cpp
 	"turingMachine.h"
 
-1244083513 /home/jimmy/projects/simpleTuringMachine/turingMachine.h
+1244773331 /home/jimmy/projects/simpleTuringMachine/turingMachine.h
 	<string>
 	"tape.h"
 
@@ -945,4 +948,65 @@
 1238939809 /usr/include/wx-2.8/wx/gtk/timer.h
 
 1238939808 /usr/include/wx-2.8/wx/generic/timer.h
+
+1238939808 /usr/include/wx-2.8/wx/filedlg.h
+	"wx/defs.h"
+	"wx/dialog.h"
+	"wx/arrstr.h"
+	"wx/generic/filedlgg.h"
+	"wx/msw/filedlg.h"
+	"wx/motif/filedlg.h"
+	"wx/gtk/filedlg.h"
+	"wx/generic/filedlgg.h"
+	"wx/gtk1/filedlg.h"
+	"wx/mac/filedlg.h"
+	"wx/cocoa/filedlg.h"
+	"wx/os2/filedlg.h"
+
+1238939808 /usr/include/wx-2.8/wx/generic/filedlgg.h
+	"wx/listctrl.h"
+	"wx/datetime.h"
+	"wx/filefn.h"
+	"wx/filedlg.h"
+
+1238939809 /usr/include/wx-2.8/wx/listctrl.h
+	"wx/defs.h"
+	"wx/listbase.h"
+	"wx/msw/listctrl.h"
+	"wx/mac/carbon/listctrl.h"
+	"wx/generic/listctrl.h"
+
+1238939809 /usr/include/wx-2.8/wx/listbase.h
+	"wx/colour.h"
+	"wx/font.h"
+	"wx/gdicmn.h"
+	"wx/event.h"
+
+1238939809 /usr/include/wx-2.8/wx/generic/listctrl.h
+	"wx/textctrl.h"
+
+1238939809 /usr/include/wx-2.8/wx/gtk/filedlg.h
+	"wx/generic/filedlgg.h"
+
+1238939808 /usr/include/wx-2.8/wx/textdlg.h
+	"wx/generic/textdlgg.h"
+	"wx/numdlg.h"
+
+1238939808 /usr/include/wx-2.8/wx/generic/textdlgg.h
+	"wx/defs.h"
+	"wx/dialog.h"
+	"wx/valtext.h"
+
+1238939808 /usr/include/wx-2.8/wx/valtext.h
+	"wx/defs.h"
+	"wx/textctrl.h"
+	"wx/validate.h"
+
+1238939808 /usr/include/wx-2.8/wx/numdlg.h
+	"wx/defs.h"
+	"wx/generic/numdlgg.h"
+
+1238939808 /usr/include/wx-2.8/wx/generic/numdlgg.h
+	"wx/defs.h"
+	"wx/dialog.h"
 

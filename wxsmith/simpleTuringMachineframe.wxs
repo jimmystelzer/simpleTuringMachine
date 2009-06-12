@@ -82,14 +82,23 @@
 				<value>1</value>
 				<min>1</min>
 				<max>10</max>
-				<pos>432,168</pos>
+				<pos>432,160</pos>
 				<size>72,19</size>
 				<handler function="OnvelocidadeCmdScroll" entry="EVT_COMMAND_SCROLL" />
+				<handler function="OnvelocidadeCmdScroll" entry="EVT_COMMAND_SCROLL_CHANGED" />
 			</object>
-			<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
-				<label>Velocidade</label>
+			<object class="wxStaticText" name="ID_STATICTEXT1" variable="velocidadeLabel" member="yes">
+				<label>Velocidade: 0.2 s</label>
 				<pos>432,152</pos>
-				<size>72,19</size>
+				<size>72,11</size>
+				<font>
+					<size>6</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
 			</object>
 			<object class="wxButton" name="ID_EXEC" variable="Exec" member="yes">
 				<label>Executar</label>
@@ -103,7 +112,7 @@
 				<size>120,34</size>
 				<handler function="OnExecPassoClick" entry="EVT_BUTTON" />
 			</object>
-			<object class="wxStaticText" name="ID_STATICTEXT2" variable="StaticText2" member="yes">
+			<object class="wxStaticText" name="ID_STATICTEXT2" variable="info" member="yes">
 				<label>u0384(q00,1)=(q3,0,R)</label>
 				<pos>216,160</pos>
 				<size>208,16</size>
@@ -142,6 +151,7 @@
 					<accel>Ctrl+S</accel>
 					<help>Defini a string de entrada da MT</help>
 					<bitmap stock_id="wxART_NEW" />
+					<handler function="OnEntrada" entry="EVT_MENU" />
 				</object>
 				<object class="separator" />
 				<object class="wxMenuItem" name="idMenuExecutar" variable="MenuItem6" member="yes">
@@ -149,18 +159,21 @@
 					<accel>Ctrl+E</accel>
 					<help>Executa a MT.</help>
 					<bitmap stock_id="wxART_GO_FORWARD" />
+					<handler function="OnExecClick" entry="EVT_MENU" />
 				</object>
 				<object class="wxMenuItem" name="idMenuExecutarPasso" variable="MenuItem7" member="yes">
 					<label>Executar Passo</label>
 					<accel>Ctrl+N</accel>
 					<help>Executa um passo na MT.</help>
 					<bitmap stock_id="wxART_GO_FORWARD" />
+					<handler function="OnExecPassoClick" entry="EVT_MENU" />
 				</object>
 				<object class="wxMenuItem" name="idMenuPause" variable="MenuItem8" member="yes">
 					<label>Pausar</label>
 					<accel>Ctrl+P</accel>
 					<help>Pausa um MT em execução.</help>
 					<bitmap stock_id="wxART_CROSS_MARK" />
+					<handler function="OnPause" entry="EVT_MENU" />
 				</object>
 			</object>
 			<object class="wxMenu" variable="Menu2" member="no">
@@ -182,6 +195,10 @@
 		<object class="wxTimer" name="ID_TIMER1" variable="Timer1" member="yes">
 			<interval>200</interval>
 			<handler function="OnTimer" entry="EVT_TIMER" />
+		</object>
+		<object class="wxFileDialog" variable="FileDialog1" member="yes">
+			<message>Selecione a MT codificada</message>
+			<wildcard>MT codificada (*.ctm)|*.ctm</wildcard>
 		</object>
 	</object>
 </wxsmith>

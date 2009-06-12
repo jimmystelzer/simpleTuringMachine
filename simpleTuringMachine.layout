@@ -5,18 +5,21 @@
 		<Cursor position="512" topLine="0" />
 	</File>
 	<File name="simpleTuringMachineMain.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="7787" topLine="163" />
+		<Cursor position="14336" topLine="257" />
 	</File>
-	<File name="simpleTuringMachineMain.h" open="0" top="0" tabpos="2">
-		<Cursor position="1017" topLine="79" />
+	<File name="simpleTuringMachineMain.h" open="1" top="0" tabpos="2">
+		<Cursor position="1146" topLine="30" />
 	</File>
-	<File name="tape.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="19" topLine="0" />
+	<File name="tape.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="204" topLine="12" />
 	</File>
-	<File name="turingMachine.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="25" topLine="0" />
+	<File name="tape.h" open="1" top="0" tabpos="3">
+		<Cursor position="245" topLine="8" />
 	</File>
-	<File name="turingMachine.h" open="0" top="0" tabpos="0">
-		<Cursor position="209" topLine="3" />
+	<File name="turingMachine.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="462" topLine="0" />
+	</File>
+	<File name="turingMachine.h" open="1" top="0" tabpos="5">
+		<Cursor position="151" topLine="6" />
 	</File>
 </CodeBlocks_layout_file>

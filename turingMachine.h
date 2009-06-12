@@ -7,12 +7,11 @@
 
 class turingMachine{
     private:
-        Tape *tape1, *tape2, tape3;
+        Tape *tape1, *tape2, *tape3;
         std::string *state, *direction, *character;
 
     public:
         turingMachine();
-        ~turingMachine();
         void setTM(std::string s);
         void setInput(std::string s);
         void reset();

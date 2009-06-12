@@ -12,6 +12,7 @@ class Tape{
         Tape();
         ~Tape();
         void setTapeStr(std::string s);
+        void reset(bool full);
         bool goLeft();
         bool goRight();
         std::string readCel();

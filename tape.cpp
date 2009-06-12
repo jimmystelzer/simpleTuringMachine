@@ -10,6 +10,13 @@ Tape::~Tape(){
 void Tape::setTapeStr(std::string s){
 
 }
+void Tape::reset(bool full){
+    if(full==true){
+        delete(this->tapestr);
+        this->tapestr = new std::string();
+    }
+    this->pos = 0;
+}
 bool Tape::goLeft(){
     if (this->pos > 0){
         this->pos--;

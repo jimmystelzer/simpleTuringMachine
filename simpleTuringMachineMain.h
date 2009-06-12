@@ -17,13 +17,14 @@
 #include <wx/statline.h>
 #include <wx/slider.h>
 #include <wx/panel.h>
+#include <wx/filedlg.h>
 #include <wx/statbmp.h>
 #include <wx/button.h>
 #include <wx/frame.h>
 #include <wx/timer.h>
 #include <wx/statusbr.h>
 //*)
-
+#include <wx/textdlg.h>
 #include "turingMachine.h"
 
 class simpleTuringMachineFrame: public wxFrame
@@ -34,7 +35,10 @@ class simpleTuringMachineFrame: public wxFrame
         virtual ~simpleTuringMachineFrame();
 
     private:
-        int i;
+        float velMult;
+        bool executando;
+        turingMachine *TM;
+        void show();
         //(*Handlers(simpleTuringMachineFrame)
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
@@ -44,6 +48,8 @@ class simpleTuringMachineFrame: public wxFrame
         void OnExecPassoClick(wxCommandEvent& event);
         void OnvelocidadeCmdScroll(wxScrollEvent& event);
         void OnTimer(wxTimerEvent& event);
+        void OnEntrada(wxCommandEvent& event);
+        void OnPause(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(simpleTuringMachineFrame)
@@ -88,13 +94,12 @@ class simpleTuringMachineFrame: public wxFrame
         wxMenuItem* MenuItem7;
         wxTextCtrl* tape2left;
         wxMenuItem* MenuItem5;
-        wxStaticText* StaticText2;
         wxTextCtrl* tape3centro;
         wxMenu* Menu3;
         wxStaticBitmap* StaticBitmap1;
         wxTextCtrl* tape1centro;
         wxMenuItem* MenuItem4;
-        wxStaticText* StaticText1;
+        wxFileDialog* FileDialog1;
         wxStaticLine* StaticLine2;
         wxTextCtrl* tape1right;
         wxButton* Exec;
@@ -105,11 +110,13 @@ class simpleTuringMachineFrame: public wxFrame
         wxMenuItem* MenuItem6;
         wxStaticLine* StaticLine3;
         wxStaticLine* StaticLine1;
+        wxStaticText* velocidadeLabel;
         wxSlider* velocidade;
         wxTextCtrl* tape3left;
         wxTextCtrl* tape3right;
         wxStaticBitmap* StaticBitmap3;
         wxTimer Timer1;
+        wxStaticText* info;
         wxButton* ExecPasso;
         //*)
 
