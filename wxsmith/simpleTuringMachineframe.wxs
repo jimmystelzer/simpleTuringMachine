@@ -12,32 +12,32 @@
 			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="tape1left" member="yes">
 				<pos>8,8</pos>
 				<size>240,27</size>
-				<style>wxTE_RIGHT</style>
+				<style>wxTE_READONLY|wxTE_RIGHT</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="tape1centro" member="yes">
 				<pos>248,8</pos>
 				<size>18,27</size>
-				<style>wxTE_CENTRE</style>
+				<style>wxTE_READONLY|wxTE_CENTRE</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="tape1right" member="yes">
 				<pos>266,8</pos>
 				<size>240,27</size>
-				<style>wxTE_LEFT</style>
+				<style>wxTE_READONLY|wxTE_LEFT</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="tape2left" member="yes">
 				<pos>8,56</pos>
 				<size>240,27</size>
-				<style>wxTE_RIGHT</style>
+				<style>wxTE_READONLY|wxTE_RIGHT</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="tape2centro" member="yes">
 				<pos>248,56</pos>
 				<size>18,27</size>
-				<style>wxTE_CENTRE</style>
+				<style>wxTE_READONLY|wxTE_CENTRE</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="tape2right" member="yes">
 				<pos>266,56</pos>
 				<size>240,27</size>
-				<style>wxTE_LEFT</style>
+				<style>wxTE_READONLY|wxTE_LEFT</style>
 			</object>
 			<object class="wxStaticBitmap" name="ID_STATICBITMAP2" variable="StaticBitmap2" member="yes">
 				<bitmap>./res/seta.png</bitmap>
@@ -66,17 +66,17 @@
 			<object class="wxTextCtrl" name="ID_TEXTCTRL7" variable="tape3left" member="yes">
 				<pos>8,104</pos>
 				<size>240,27</size>
-				<style>wxTE_RIGHT</style>
+				<style>wxTE_READONLY|wxTE_RIGHT</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL8" variable="tape3centro" member="yes">
 				<pos>248,104</pos>
 				<size>18,27</size>
-				<style>wxTE_CENTRE</style>
+				<style>wxTE_READONLY|wxTE_CENTRE</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL9" variable="tape3right" member="yes">
 				<pos>266,104</pos>
 				<size>240,27</size>
-				<style>wxTE_LEFT</style>
+				<style>wxTE_READONLY|wxTE_LEFT</style>
 			</object>
 			<object class="wxSlider" name="ID_VELOCIDADE" variable="velocidade" member="yes">
 				<value>1</value>
