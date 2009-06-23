@@ -88,7 +88,7 @@
 				<handler function="OnvelocidadeCmdScroll" entry="EVT_COMMAND_SCROLL_CHANGED" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT1" variable="velocidadeLabel" member="yes">
-				<label>Velocidade: 0.2 s</label>
+				<label>Velocidade: 2.0X</label>
 				<pos>432,152</pos>
 				<size>72,11</size>
 				<font>
@@ -113,7 +113,7 @@
 				<handler function="OnExecPassoClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT2" variable="info" member="yes">
-				<label>u0384(q00,1)=(q3,0,R)</label>
+				<label></label>
 				<pos>216,160</pos>
 				<size>208,16</size>
 			</object>

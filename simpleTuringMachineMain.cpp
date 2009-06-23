@@ -97,7 +97,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     wxMenu* Menu1;
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
-    
+
     Create(parent, id, _("simple Turing Machine"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxCLOSE_BOX, _T("id"));
     SetClientSize(wxSize(514,244));
     {
@@ -122,12 +122,12 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     tape3centro = new wxTextCtrl(panel1, ID_TEXTCTRL8, wxEmptyString, wxPoint(248,104), wxSize(18,27), wxTE_READONLY|wxTE_CENTRE, wxDefaultValidator, _T("ID_TEXTCTRL8"));
     tape3right = new wxTextCtrl(panel1, ID_TEXTCTRL9, wxEmptyString, wxPoint(266,104), wxSize(240,27), wxTE_READONLY|wxTE_LEFT, wxDefaultValidator, _T("ID_TEXTCTRL9"));
     velocidade = new wxSlider(panel1, ID_VELOCIDADE, 1, 1, 10, wxPoint(432,160), wxSize(72,19), 0, wxDefaultValidator, _T("ID_VELOCIDADE"));
-    velocidadeLabel = new wxStaticText(panel1, ID_STATICTEXT1, _("Velocidade: 0.2 s"), wxPoint(432,152), wxSize(72,11), 0, _T("ID_STATICTEXT1"));
+    velocidadeLabel = new wxStaticText(panel1, ID_STATICTEXT1, _("Velocidade: 2.0X"), wxPoint(432,152), wxSize(72,11), 0, _T("ID_STATICTEXT1"));
     wxFont velocidadeLabelFont(6,wxSWISS,wxFONTSTYLE_NORMAL,wxNORMAL,false,_T("Sans"),wxFONTENCODING_DEFAULT);
     velocidadeLabel->SetFont(velocidadeLabelFont);
     Exec = new wxButton(panel1, ID_EXEC, _("Executar"), wxPoint(8,152), wxSize(80,34), 0, wxDefaultValidator, _T("ID_EXEC"));
     ExecPasso = new wxButton(panel1, ID_EXECPASSO, _("Executar Passo"), wxPoint(88,152), wxSize(120,34), 0, wxDefaultValidator, _T("ID_EXECPASSO"));
-    info = new wxStaticText(panel1, ID_STATICTEXT2, _("u0384(q00,1)=(q3,0,R)"), wxPoint(216,160), wxSize(208,16), 0, _T("ID_STATICTEXT2"));
+    info = new wxStaticText(panel1, ID_STATICTEXT2, wxEmptyString, wxPoint(216,160), wxSize(208,16), 0, _T("ID_STATICTEXT2"));
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
     MenuItem3 = new wxMenuItem(Menu1, idMenuAbrir, _("Abrir\tCtrl+O"), _("Abrir Maquina de Turing Codificada"), wxITEM_NORMAL);
@@ -172,7 +172,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     Timer1.Start(200, false);
     FileDialog1 = new wxFileDialog(this, _("Selecione a MT codificada"), wxEmptyString, wxEmptyString, _("MT codificada (*.ctm)|*.ctm"), wxFD_DEFAULT_STYLE, wxDefaultPosition, wxDefaultSize, _T("wxFileDialog"));
     Center();
-    
+
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_TOP|wxEVT_SCROLL_BOTTOM|wxEVT_SCROLL_LINEUP|wxEVT_SCROLL_LINEDOWN|wxEVT_SCROLL_PAGEUP|wxEVT_SCROLL_PAGEDOWN|wxEVT_SCROLL_THUMBTRACK|wxEVT_SCROLL_THUMBRELEASE|wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
     Connect(ID_EXEC,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnExecClick);
@@ -210,8 +210,37 @@ void simpleTuringMachineFrame::OnOpen(wxCommandEvent& event)
 {
     //Abrir
     if  (FileDialog1->ShowModal() == wxID_OK) { //abriu o arquivo
-        wxMessageBox(_("Arquivo carregado com êxito."),_("Abrir Arquivo."));
-        //FileDialog1->GetPath();
+        std::string lineTmpStr;
+        std::stringstream tmpStr;
+        std::ifstream inFile;
+        inFile.open((FileDialog1->GetPath()).mb_str());
+
+        if (!inFile) {
+            // erro ao abrir
+            wxMessageBox(_("Erro ao abrir arquivo."),_("Abrir Arquivo."));
+        }else{
+            std::getline(inFile,lineTmpStr);
+            unsigned short int i;
+            tmpStr << lineTmpStr;
+            tmpStr >> i;
+            this->TM->setBitsState(i);
+            tmpStr >> i;
+            this->TM->setBitsAlphabet(i);
+            tmpStr.str("");
+            while (std::getline(inFile,lineTmpStr)) {
+                tmpStr << lineTmpStr;
+            }
+            wxMessageBox(_("Arquivo carregado com êxito."),_("Abrir Arquivo."));
+        }
+        lineTmpStr = tmpStr.str();
+        if(lineTmpStr.find("\r",0) != std::string::npos){
+            lineTmpStr.erase(lineTmpStr.find("\r",0),1);
+        }
+        if(lineTmpStr.find("\n",0) != std::string::npos){
+            lineTmpStr.erase(lineTmpStr.find("\n",0),1);
+        }
+        this->TM->setTM(lineTmpStr);
+        this->show();
     }else{
         wxMessageBox(_("Cancelado o carregamento."),_("Abrir Arquivo."));
     }
@@ -230,22 +259,31 @@ void simpleTuringMachineFrame::OnExecClick(wxCommandEvent& event)
 void simpleTuringMachineFrame::OnExecPassoClick(wxCommandEvent& event)
 {
     //Executar Passo
+    this->executar();
 }
-
+void simpleTuringMachineFrame::executar(){
+    this->TM->exec();
+    this->show();
+}
 void simpleTuringMachineFrame::OnvelocidadeCmdScroll(wxScrollEvent& event)
 {
-    this->velMult = ((float)this->velocidade->GetValue() * (float)this->Timer1.GetInterval())/(float)1000;
+    this->velMult = ((float)this->velocidade->GetValue() * 200);
+    Timer1.Stop();
+    Timer1.Start(velMult, false);
+    velMult = velMult/(float)1000;
+    velMult = 2.2 - velMult;
     wxString s;
-    s.Printf(wxT("Velocidade: %.1f s"), this->velMult);
+    s.Printf(wxT("Velocidade: %.1fX"), this->velMult);
     this->velocidadeLabel->SetLabel(s);
 }
 
 void simpleTuringMachineFrame::OnTimer(wxTimerEvent& event)
 {
     if (this->executando == true){
-        this->info->SetLabel(wxT("true"));
+        //this->info->SetLabel(wxT("true"));
+        this->executar();
     }else{
-        this->info->SetLabel(wxT("false"));
+        //this->info->SetLabel(wxT("false"));
     }
 }
 
@@ -253,7 +291,11 @@ void simpleTuringMachineFrame::OnEntrada(wxCommandEvent& event)
 {
     wxTextEntryDialog *entradaTape2 = new wxTextEntryDialog(this,_("Entre com o conteúdo da fita 2 que será usada como entrada da MT."),_("Entrada da MT"));
     if  (entradaTape2->ShowModal() == wxID_OK) { //abriu o arquivo
-
+        wxString tmpWXStr;
+        tmpWXStr = entradaTape2->GetValue();
+        std::string tmpStr = std::string(tmpWXStr.mb_str());
+        this->TM->setInput(tmpStr);
+        this->show();
     }else{
         wxMessageBox(_("Cancelado o pelo usuário."),_("Entrada da MT."));
     }
@@ -265,6 +307,25 @@ void simpleTuringMachineFrame::OnPause(wxCommandEvent& event)
 }
 
 void simpleTuringMachineFrame::show(){
-//    (this->TM->leftTapeView1()).c_str();
-//    this->tape1left->SetValue();
+
+    this->tape1left->SetValue(wxString(this->TM->leftTapeView1().c_str(), wxConvUTF8));
+    this->tape1left->SetInsertionPointEnd();
+    this->tape1centro->SetValue(wxString(this->TM->middleTapeView1().c_str(), wxConvUTF8));
+    this->tape1right->SetValue(wxString(this->TM->rightTapeView1().c_str(), wxConvUTF8));
+    this->tape1right->SetInsertionPoint(0);
+
+    this->tape2left->SetValue(wxString(this->TM->leftTapeView2().c_str(), wxConvUTF8));
+    this->tape2left->SetInsertionPointEnd();
+    this->tape2centro->SetValue(wxString(this->TM->middleTapeView2().c_str(), wxConvUTF8));
+    this->tape2right->SetValue(wxString(this->TM->rightTapeView2().c_str(), wxConvUTF8));
+    this->tape2right->SetInsertionPoint(0);
+
+    this->tape3left->SetValue(wxString(this->TM->leftTapeView3().c_str(), wxConvUTF8));
+    this->tape3left->SetInsertionPointEnd();
+    this->tape3centro->SetValue(wxString(this->TM->middleTapeView3().c_str(), wxConvUTF8));
+    this->tape3right->SetValue(wxString(this->TM->rightTapeView3().c_str(), wxConvUTF8));
+    this->tape3right->SetInsertionPoint(0);
+
+    this->info->SetLabel(wxString(this->TM->stateView().c_str(), wxConvUTF8));
+
 }

@@ -26,6 +26,9 @@
 //*)
 #include <wx/textdlg.h>
 #include "turingMachine.h"
+#include <sstream>
+#include <fstream>
+
 
 class simpleTuringMachineFrame: public wxFrame
 {
@@ -39,6 +42,7 @@ class simpleTuringMachineFrame: public wxFrame
         bool executando;
         turingMachine *TM;
         void show();
+        void executar();
         //(*Handlers(simpleTuringMachineFrame)
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);

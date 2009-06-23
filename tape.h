@@ -16,6 +16,8 @@ class Tape{
         bool goLeft();
         bool goRight();
         std::string readCel();
+        void writeCel(std::string s);
+        void writeCel(char s);
 
         std::string leftTapeView();
         std::string middleTapeView();
