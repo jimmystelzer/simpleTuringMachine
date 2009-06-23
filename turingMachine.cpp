@@ -9,6 +9,7 @@ turingMachine::turingMachine(){
     this->character = new std::string("");
     this->newState = new std::string("");
     this->newCharacter = new std::string("");
+    this->bitsAlphabet = 0;
 }
 void turingMachine::setTM(std::string s){
     tape1->reset(true);
@@ -71,6 +72,19 @@ void turingMachine::setBitsAlphabet(unsigned short int i){
 
 std::string turingMachine::stateView(){
     std::ostringstream tmpStr;
-    tmpStr << "D(" << *this->state << "," << *this->character << "):=(" << *this->newState << "," << *this->newCharacter << "," << *this->direction << ")";
+    tmpStr << "\u03b4(" << *this->state << "," << *this->character << "):=(" << *this->newState << "," << *this->newCharacter << "," << *this->direction << ")" << std::endl;
+    tmpStr << "\u03b2:=a";
+    for(unsigned short int i=0;i < this->bitsAlphabet - 2;i++){
+        tmpStr << "0";
+    }
+    tmpStr << "00; R:=a";
+    for(unsigned short int i=0;i < this->bitsAlphabet - 2;i++){
+        tmpStr << "0";
+    }
+    tmpStr << "01; L:=a";
+    for(unsigned short int i=0;i < this->bitsAlphabet - 2;i++){
+        tmpStr << "0";
+    }
+    tmpStr << "10";
     return tmpStr.str();
 }
