@@ -16,4 +16,3 @@ Delta := funções de transição. (U+03B4)
 q0 := Estado inicial.
 Beta := Simbolo do branco. (U+03B2)
 F := Estado final.
-
