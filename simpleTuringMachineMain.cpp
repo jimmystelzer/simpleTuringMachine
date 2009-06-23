@@ -76,6 +76,7 @@ const long simpleTuringMachineFrame::idMenuEntrada = wxNewId();
 const long simpleTuringMachineFrame::idMenuExecutar = wxNewId();
 const long simpleTuringMachineFrame::idMenuExecutarPasso = wxNewId();
 const long simpleTuringMachineFrame::idMenuPause = wxNewId();
+const long simpleTuringMachineFrame::idMenuRetar = wxNewId();
 const long simpleTuringMachineFrame::idMenuAbout = wxNewId();
 const long simpleTuringMachineFrame::ID_STATUSBAR1 = wxNewId();
 const long simpleTuringMachineFrame::ID_TIMER1 = wxNewId();
@@ -97,7 +98,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     wxMenu* Menu1;
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
-
+    
     Create(parent, id, _("simple Turing Machine"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxCLOSE_BOX, _T("id"));
     SetClientSize(wxSize(514,244));
     {
@@ -128,6 +129,8 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     Exec = new wxButton(panel1, ID_EXEC, _("Executar"), wxPoint(8,152), wxSize(80,34), 0, wxDefaultValidator, _T("ID_EXEC"));
     ExecPasso = new wxButton(panel1, ID_EXECPASSO, _("Executar Passo"), wxPoint(88,152), wxSize(120,34), 0, wxDefaultValidator, _T("ID_EXECPASSO"));
     info = new wxStaticText(panel1, ID_STATICTEXT2, wxEmptyString, wxPoint(216,152), wxSize(208,32), 0, _T("ID_STATICTEXT2"));
+    wxFont infoFont(8,wxSWISS,wxFONTSTYLE_NORMAL,wxNORMAL,false,_T("Sans"),wxFONTENCODING_DEFAULT);
+    info->SetFont(infoFont);
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
     MenuItem3 = new wxMenuItem(Menu1, idMenuAbrir, _("Abrir\tCtrl+O"), _("Abrir Maquina de Turing Codificada"), wxITEM_NORMAL);
@@ -155,6 +158,10 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     MenuItem8 = new wxMenuItem(Menu3, idMenuPause, _("Pausar\tCtrl+P"), _("Pausa um MT em execução."), wxITEM_NORMAL);
     MenuItem8->SetBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_CROSS_MARK")),wxART_OTHER));
     Menu3->Append(MenuItem8);
+    Menu3->AppendSeparator();
+    MenuItem9 = new wxMenuItem(Menu3, idMenuRetar, _("Resetar\tCtrl+R"), _("Resetar MT"), wxITEM_NORMAL);
+    MenuItem9->SetBitmap(wxArtProvider::GetBitmap(wxART_MAKE_ART_ID_FROM_STR(_T("wxART_GO_BACK")),wxART_OTHER));
+    Menu3->Append(MenuItem9);
     MenuBar1->Append(Menu3, _("&Controle"));
     Menu2 = new wxMenu();
     MenuItem2 = new wxMenuItem(Menu2, idMenuAbout, _("Sobre\tF1"), _("Mostra informações sobre o applicativo"), wxITEM_NORMAL);
@@ -172,7 +179,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     Timer1.Start(1000, false);
     FileDialog1 = new wxFileDialog(this, _("Selecione a MT codificada"), wxEmptyString, wxEmptyString, _("MT codificada (*.ctm)|*.ctm"), wxFD_DEFAULT_STYLE, wxDefaultPosition, wxDefaultSize, _T("wxFileDialog"));
     Center();
-
+    
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_TOP|wxEVT_SCROLL_BOTTOM|wxEVT_SCROLL_LINEUP|wxEVT_SCROLL_LINEDOWN|wxEVT_SCROLL_PAGEUP|wxEVT_SCROLL_PAGEDOWN|wxEVT_SCROLL_THUMBTRACK|wxEVT_SCROLL_THUMBRELEASE|wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
     Connect(ID_EXEC,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnExecClick);
@@ -184,6 +191,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     Connect(idMenuExecutar,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnExecClick);
     Connect(idMenuExecutarPasso,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnExecPassoClick);
     Connect(idMenuPause,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnPause);
+    Connect(idMenuRetar,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnResetar);
     Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnAbout);
     Connect(ID_TIMER1,wxEVT_TIMER,(wxObjectEventFunction)&simpleTuringMachineFrame::OnTimer);
     //*)
@@ -351,4 +359,9 @@ void simpleTuringMachineFrame::show(){
 
     this->info->SetLabel(wxString(this->TM->stateView().c_str(), wxConvUTF8));
 
+}
+
+void simpleTuringMachineFrame::OnResetar(wxCommandEvent& event)
+{
+    this->TM->reset();
 }

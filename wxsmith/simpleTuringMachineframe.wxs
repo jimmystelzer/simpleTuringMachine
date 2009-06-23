@@ -117,6 +117,14 @@
 				<label></label>
 				<pos>216,152</pos>
 				<size>208,32</size>
+				<font>
+					<size>8</size>
+					<style>normal</style>
+					<weight>normal</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Sans</face>
+				</font>
 			</object>
 		</object>
 		<object class="wxMenuBar" variable="MenuBar1" member="no">
@@ -175,6 +183,14 @@
 					<help>Pausa um MT em execução.</help>
 					<bitmap stock_id="wxART_CROSS_MARK" />
 					<handler function="OnPause" entry="EVT_MENU" />
+				</object>
+				<object class="separator" />
+				<object class="wxMenuItem" name="idMenuRetar" variable="MenuItem9" member="yes">
+					<label>Resetar</label>
+					<accel>Ctrl+R</accel>
+					<help>Resetar MT</help>
+					<bitmap stock_id="wxART_GO_BACK" />
+					<handler function="OnResetar" entry="EVT_MENU" />
 				</object>
 			</object>
 			<object class="wxMenu" variable="Menu2" member="no">

@@ -9,7 +9,19 @@ class turingMachine{
     private:
         Tape *tape1, *tape2, *tape3;
         std::string *state, *direction, *character, *newState, *newCharacter;
+        std::string *tmpState, *tmpDirection, *tmpCharacter, *tmpTape3Character, *tmpNewState, *tmpNewCharacter;
         unsigned short int bitsState, bitsAlphabet;
+        unsigned short int controlPass, controlPar;
+        std::stringstream par;
+
+        std::string direita();
+        std::string branco();
+
+        void execCopyTape();
+        void execReadTape3(unsigned short int i);
+        void execReadTape1();
+        void execCmpChar();
+        void execFindState();
     public:
         turingMachine();
         void setTM(std::string s);

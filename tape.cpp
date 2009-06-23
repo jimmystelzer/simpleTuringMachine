@@ -41,12 +41,12 @@ bool Tape::goRight(){
     return false;
 }
 void Tape::writeCel(std::string s){
-    this->writeCel(s.at(0));
-}
-void Tape::writeCel(char s){
-    this->tapestr->replace(this->pos,1,&s);
+    this->tapestr->replace(this->pos,1,s);
 }
 
+void Tape::writeCel(std::string s, unsigned short int i){
+    this->tapestr->replace(this->pos,i+1,s);
+}
 std::string Tape::readCel(){
     return this->tapestr->substr(this->pos,1);
 }

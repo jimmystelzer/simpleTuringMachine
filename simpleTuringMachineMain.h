@@ -54,6 +54,7 @@ class simpleTuringMachineFrame: public wxFrame
         void OnTimer(wxTimerEvent& event);
         void OnEntrada(wxCommandEvent& event);
         void OnPause(wxCommandEvent& event);
+        void OnResetar(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(simpleTuringMachineFrame)
@@ -85,6 +86,7 @@ class simpleTuringMachineFrame: public wxFrame
         static const long idMenuExecutar;
         static const long idMenuExecutarPasso;
         static const long idMenuPause;
+        static const long idMenuRetar;
         static const long idMenuAbout;
         static const long ID_STATUSBAR1;
         static const long ID_TIMER1;
@@ -115,6 +117,7 @@ class simpleTuringMachineFrame: public wxFrame
         wxStaticLine* StaticLine3;
         wxStaticLine* StaticLine1;
         wxStaticText* velocidadeLabel;
+        wxMenuItem* MenuItem9;
         wxSlider* velocidade;
         wxTextCtrl* tape3left;
         wxTextCtrl* tape3right;
