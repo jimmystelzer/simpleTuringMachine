@@ -79,16 +79,17 @@
 				<style>wxTE_READONLY|wxTE_LEFT</style>
 			</object>
 			<object class="wxSlider" name="ID_VELOCIDADE" variable="velocidade" member="yes">
-				<value>1</value>
+				<value>6</value>
 				<min>1</min>
 				<max>10</max>
 				<pos>432,160</pos>
 				<size>72,19</size>
+				<style>wxSL_INVERSE</style>
 				<handler function="OnvelocidadeCmdScroll" entry="EVT_COMMAND_SCROLL" />
 				<handler function="OnvelocidadeCmdScroll" entry="EVT_COMMAND_SCROLL_CHANGED" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT1" variable="velocidadeLabel" member="yes">
-				<label>Velocidade: 2.0X</label>
+				<label>Velocidade: 1.0X</label>
 				<pos>432,152</pos>
 				<size>72,11</size>
 				<font>
@@ -114,8 +115,8 @@
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT2" variable="info" member="yes">
 				<label></label>
-				<pos>216,160</pos>
-				<size>208,16</size>
+				<pos>216,152</pos>
+				<size>208,32</size>
 			</object>
 		</object>
 		<object class="wxMenuBar" variable="MenuBar1" member="no">
@@ -193,7 +194,7 @@
 			<styles>wxSB_NORMAL</styles>
 		</object>
 		<object class="wxTimer" name="ID_TIMER1" variable="Timer1" member="yes">
-			<interval>200</interval>
+			<interval>1000</interval>
 			<handler function="OnTimer" entry="EVT_TIMER" />
 		</object>
 		<object class="wxFileDialog" variable="FileDialog1" member="yes">

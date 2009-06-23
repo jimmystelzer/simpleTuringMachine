@@ -3,19 +3,26 @@
 Tape::Tape(){
     this->tapestr = new std::string();
     this->pos = 0;
+    for(unsigned int i=0;i<10;i++){
+        this->tapestr->append("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+    }
 }
 Tape::~Tape(){
     delete(this->tapestr);
 }
 void Tape::setTapeStr(std::string s){
     this->tapestr->replace(this->tapestr->begin(),this->tapestr->end(),s);
-    wchar_t beta = 0x20;
-    this->tapestr->append(100, (char)beta);
+    for(unsigned int i=0;i<10;i++){
+        this->tapestr->append("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+    }
 }
 void Tape::reset(bool full){
     if(full==true){
         delete(this->tapestr);
         this->tapestr = new std::string("");
+        for(unsigned int i=0;i<10;i++){
+            this->tapestr->append("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+        }
     }
     this->pos = 0;
 }
