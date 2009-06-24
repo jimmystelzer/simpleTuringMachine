@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1245448771 source:/home/jimmy/projects/simpleTuringMachine/simpleTuringMachineApp.cpp
+1245802339 source:/home/jimmy/projects/simpleTuringMachine/simpleTuringMachineApp.cpp
 	"simpleTuringMachineApp.h"
 	"simpleTuringMachineMain.h"
 	<wx/image.h>
 
-1245448771 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineApp.h
+1245802339 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineApp.h
 	<wx/app.h>
 
 1238939807 /usr/include/wx-2.8/wx/app.h
@@ -346,7 +346,7 @@
 
 1238939809 /usr/include/wx-2.8/wx/gtk/app.h
 
-1245790032 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.h
+1245802339 /home/jimmy/projects/simpleTuringMachine/simpleTuringMachineMain.h
 	<wx/stattext.h>
 	<wx/menu.h>
 	<wx/textctrl.h>
@@ -914,16 +914,16 @@
 
 1238939809 /usr/include/wx-2.8/wx/gtk/slider.h
 
-1245793012 source:/home/jimmy/projects/simpleTuringMachine/tape.cpp
+1245794000 source:/home/jimmy/projects/simpleTuringMachine/tape.cpp
 	"tape.h"
 
-1245791477 /home/jimmy/projects/simpleTuringMachine/tape.h
+1245794000 /home/jimmy/projects/simpleTuringMachine/tape.h
 	<string>
 
-1245793522 source:/home/jimmy/projects/simpleTuringMachine/turingMachine.cpp
+1245794000 source:/home/jimmy/projects/simpleTuringMachine/turingMachine.cpp
 	"turingMachine.h"
 
-1245793483 /home/jimmy/projects/simpleTuringMachine/turingMachine.h
+1245794000 /home/jimmy/projects/simpleTuringMachine/turingMachine.h
 	<string>
 	<sstream>
 	"tape.h"

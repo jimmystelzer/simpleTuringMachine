@@ -98,7 +98,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     wxMenu* Menu1;
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
-
+    
     Create(parent, id, _("simple Turing Machine"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
     SetClientSize(wxSize(514,244));
     {
@@ -179,7 +179,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     Timer1.Start(1000, false);
     FileDialog1 = new wxFileDialog(this, _("Selecione a MT codificada"), wxEmptyString, wxEmptyString, _("MT codificada (*.ctm)|*.ctm"), wxFD_DEFAULT_STYLE, wxDefaultPosition, wxDefaultSize, _T("wxFileDialog"));
     Center();
-
+    
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_TOP|wxEVT_SCROLL_BOTTOM|wxEVT_SCROLL_LINEUP|wxEVT_SCROLL_LINEDOWN|wxEVT_SCROLL_PAGEUP|wxEVT_SCROLL_PAGEDOWN|wxEVT_SCROLL_THUMBTRACK|wxEVT_SCROLL_THUMBRELEASE|wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
     Connect(ID_EXEC,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnExecClick);
