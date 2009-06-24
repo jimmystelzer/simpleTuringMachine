@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Debug" />
+	<ActiveTarget name="Release" />
 	<File name="simpleTuringMachineApp.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="512" topLine="9" />
 	</File>
-	<File name="simpleTuringMachineMain.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="17360" topLine="309" />
+	<File name="simpleTuringMachineMain.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="13752" topLine="225" />
 	</File>
 	<File name="simpleTuringMachineMain.h" open="0" top="0" tabpos="2">
 		<Cursor position="848" topLine="7" />
@@ -16,10 +16,10 @@
 	<File name="tape.h" open="0" top="0" tabpos="3">
 		<Cursor position="424" topLine="0" />
 	</File>
-	<File name="turingMachine.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="2112" topLine="51" />
+	<File name="turingMachine.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="450" topLine="0" />
 	</File>
-	<File name="turingMachine.h" open="1" top="0" tabpos="2">
+	<File name="turingMachine.h" open="0" top="0" tabpos="2">
 		<Cursor position="701" topLine="12" />
 	</File>
 </CodeBlocks_layout_file>

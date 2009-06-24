@@ -98,7 +98,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     wxMenu* Menu1;
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
-    
+
     Create(parent, id, _("simple Turing Machine"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
     SetClientSize(wxSize(514,244));
     {
@@ -179,7 +179,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     Timer1.Start(1000, false);
     FileDialog1 = new wxFileDialog(this, _("Selecione a MT codificada"), wxEmptyString, wxEmptyString, _("MT codificada (*.ctm)|*.ctm"), wxFD_DEFAULT_STYLE, wxDefaultPosition, wxDefaultSize, _T("wxFileDialog"));
     Center();
-    
+
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_TOP|wxEVT_SCROLL_BOTTOM|wxEVT_SCROLL_LINEUP|wxEVT_SCROLL_LINEDOWN|wxEVT_SCROLL_PAGEUP|wxEVT_SCROLL_PAGEDOWN|wxEVT_SCROLL_THUMBTRACK|wxEVT_SCROLL_THUMBRELEASE|wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
     Connect(ID_EXEC,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnExecClick);
@@ -236,7 +236,8 @@ void simpleTuringMachineFrame::OnOpen(wxCommandEvent& event)
             tmpStr >> i;
             this->TM->setBitsAlphabet(i);
             tmpStr.str("");
-            while (std::getline(inFile,lineTmpStr)) {
+            // Fix for windows bug
+            while (std::getline(inFile,lineTmpStr,'\n')) {
                 tmpStr << lineTmpStr;
             }
             wxMessageBox(_("Arquivo carregado com êxito."),_("Abrir Arquivo."));
@@ -244,9 +245,6 @@ void simpleTuringMachineFrame::OnOpen(wxCommandEvent& event)
         lineTmpStr = tmpStr.str();
         if(lineTmpStr.find("\r",0) != std::string::npos){
             lineTmpStr.erase(lineTmpStr.find("\r",0),1);
-        }
-        if(lineTmpStr.find("\n",0) != std::string::npos){
-            lineTmpStr.erase(lineTmpStr.find("\n",0),1);
         }
         this->TM->setTM(lineTmpStr);
         this->show();
