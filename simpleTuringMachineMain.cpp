@@ -264,6 +264,11 @@ void simpleTuringMachineFrame::OnClose(wxCommandEvent& event)
     this->executando = false;
     this->TM->reset(false);
     this->show();
+    if(this->executando){
+        this->Exec->SetLabel(wxT("Pausar"));
+    }else{
+        this->Exec->SetLabel(wxT("Executar"));
+    }
 }
 
 void simpleTuringMachineFrame::OnExecClick(wxCommandEvent& event)
@@ -369,4 +374,9 @@ void simpleTuringMachineFrame::OnResetar(wxCommandEvent& event){
     this->executando = false;
     this->TM->reset(true);
     this->show();
+    if(this->executando){
+        this->Exec->SetLabel(wxT("Pausar"));
+    }else{
+        this->Exec->SetLabel(wxT("Executar"));
+    }
 }

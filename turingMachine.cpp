@@ -235,13 +235,19 @@ void turingMachine::execReadTape1(){
 void turingMachine::execCmpChar(){
     if(this->controlPar == 0){
         if(this->tmpTape3Character->compare(*this->character)==0){
-            tape3->writeCel(*this->newCharacter,this->bitsAlphabet);
+            unsigned short int n;
+            if((tape3->readCel()).compare(std::string("B"))==0){
+                n = 1;
+            }else{
+                n = this->bitsAlphabet;
+            }
+            tape3->writeCel(*this->newCharacter,n);
             if(this->direction->compare(direita())==0){
-                for(unsigned short int i=0;i <= this->bitsAlphabet;i++){
+                for(unsigned short int i=0;i <= n;i++){
                     tape3->goRight();
                 }
             }else{
-                for(unsigned short int i=0;i <= this->bitsAlphabet;i++){
+                for(unsigned short int i=0;i <= n;i++){
                     tape3->goLeft();
                 }
                 tape3->goLeft();
