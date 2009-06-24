@@ -26,7 +26,7 @@ class turingMachine{
         turingMachine();
         void setTM(std::string s);
         void setInput(std::string s);
-        void reset();
+        void reset(bool f);
         bool exec();
 
         void setBitsState(unsigned short int i);

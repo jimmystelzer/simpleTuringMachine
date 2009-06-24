@@ -222,13 +222,15 @@ void simpleTuringMachineFrame::OnOpen(wxCommandEvent& event)
         std::string lineTmpStr;
         std::stringstream tmpStr;
         std::ifstream inFile;
+
         inFile.open((FileDialog1->GetPath()).mb_str());
 
         if (!inFile) {
             // erro ao abrir
             wxMessageBox(_("Erro ao abrir arquivo."),_("Abrir Arquivo."));
         }else{
-            std::getline(inFile,lineTmpStr);
+            // Fix for windows bug
+            std::getline(inFile,lineTmpStr,'\n');
             unsigned short int i;
             tmpStr << lineTmpStr;
             tmpStr >> i;
@@ -236,8 +238,10 @@ void simpleTuringMachineFrame::OnOpen(wxCommandEvent& event)
             tmpStr >> i;
             this->TM->setBitsAlphabet(i);
             tmpStr.str("");
+            tmpStr.clear();
             // Fix for windows bug
-            while (std::getline(inFile,lineTmpStr,'\n')) {
+            while (!inFile.eof()){
+                std::getline(inFile,lineTmpStr,'\n');
                 tmpStr << lineTmpStr;
             }
             wxMessageBox(_("Arquivo carregado com êxito."),_("Abrir Arquivo."));
@@ -248,6 +252,7 @@ void simpleTuringMachineFrame::OnOpen(wxCommandEvent& event)
         }
         this->TM->setTM(lineTmpStr);
         this->show();
+
     }else{
         wxMessageBox(_("Cancelado o carregamento."),_("Abrir Arquivo."));
     }
@@ -256,11 +261,19 @@ void simpleTuringMachineFrame::OnOpen(wxCommandEvent& event)
 void simpleTuringMachineFrame::OnClose(wxCommandEvent& event)
 {
     //Fechar
+    this->executando = false;
+    this->TM->reset(false);
+    this->show();
 }
 
 void simpleTuringMachineFrame::OnExecClick(wxCommandEvent& event)
 {
     this->executando = (this->executando == false) ? true : false;
+    if(this->executando){
+        this->Exec->SetLabel(wxT("Pausar"));
+    }else{
+        this->Exec->SetLabel(wxT("Executar"));
+    }
 }
 
 void simpleTuringMachineFrame::OnExecPassoClick(wxCommandEvent& event)
@@ -284,18 +297,13 @@ void simpleTuringMachineFrame::OnvelocidadeCmdScroll(wxScrollEvent& event)
     this->velocidadeLabel->SetLabel(s);
 }
 
-void simpleTuringMachineFrame::OnTimer(wxTimerEvent& event)
-{
+void simpleTuringMachineFrame::OnTimer(wxTimerEvent& event){
     if (this->executando == true){
-        //this->info->SetLabel(wxT("true"));
         this->executar();
-    }else{
-        //this->info->SetLabel(wxT("false"));
     }
 }
 
-void simpleTuringMachineFrame::OnEntrada(wxCommandEvent& event)
-{
+void simpleTuringMachineFrame::OnEntrada(wxCommandEvent& event){
     wxTextEntryDialog *entradaTape2 = new wxTextEntryDialog(this,_("Entre com o conteúdo da fita 2 que será usada como entrada da MT."),_("Entrada da MT"));
     if  (entradaTape2->ShowModal() == wxID_OK) { //abriu o arquivo
         wxString tmpWXStr;
@@ -308,8 +316,7 @@ void simpleTuringMachineFrame::OnEntrada(wxCommandEvent& event)
     }
 }
 
-void simpleTuringMachineFrame::OnPause(wxCommandEvent& event)
-{
+void simpleTuringMachineFrame::OnPause(wxCommandEvent& event){
     this->executando = false;
 }
 
@@ -356,10 +363,10 @@ void simpleTuringMachineFrame::show(){
     this->tape3right->SetInsertionPoint(0);
 
     this->info->SetLabel(wxString(this->TM->stateView().c_str(), wxConvUTF8));
-
 }
 
-void simpleTuringMachineFrame::OnResetar(wxCommandEvent& event)
-{
-    this->TM->reset();
+void simpleTuringMachineFrame::OnResetar(wxCommandEvent& event){
+    this->executando = false;
+    this->TM->reset(true);
+    this->show();
 }

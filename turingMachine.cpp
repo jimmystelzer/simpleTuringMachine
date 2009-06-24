@@ -30,9 +30,17 @@ void turingMachine::setInput(std::string s){
     tape2->reset(true);
     tape2->setTapeStr(s);
 }
-void turingMachine::reset(){
-    this->tape1->reset(false);
-    this->tape2->reset(false);
+void turingMachine::reset(bool f){
+    if(f){
+        this->tape1->reset(false);
+        this->tape2->reset(false);
+    }else{
+        this->tape1->reset(true);
+        this->tape2->reset(true);
+        this->bitsAlphabet = 0;
+        this->bitsState = 0;
+    }
+
     this->tape3->reset(true);
 
     this->state = new std::string("");
@@ -46,8 +54,6 @@ void turingMachine::reset(){
     this->tmpNewState = new std::string("");
     this->tmpNewCharacter = new std::string("");
     this->tmpTape3Character = new std::string("");
-    this->bitsAlphabet = 0;
-    this->bitsState = 0;
     this->controlPass = 0;
     this->controlPar = 0;
     this->par.str("");

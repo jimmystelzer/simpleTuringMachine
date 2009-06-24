@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1245801355 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachinemain.cpp
+1245808771 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachinemain.cpp
 	"simpleTuringMachineMain.h"
 	<wx/msgdlg.h>
 	<wx/artprov.h>
@@ -1022,7 +1022,7 @@
 	"wx/defs.h"
 	"wx/dialog.h"
 
-1245800858 c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\turingmachine.h
+1245808172 c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\turingmachine.h
 	<string>
 	<sstream>
 	"tape.h"
@@ -1119,7 +1119,7 @@
 1245800858 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\tape.cpp
 	"tape.h"
 
-1245800858 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\turingmachine.cpp
+1245808305 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\turingmachine.cpp
 	"turingMachine.h"
 
 1245800858 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachineapp.cpp
