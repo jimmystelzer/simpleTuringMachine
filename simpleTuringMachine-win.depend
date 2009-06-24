@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1245798591 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachinemain.cpp
+1245801355 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachinemain.cpp
 	"simpleTuringMachineMain.h"
 	<wx/msgdlg.h>
 	<wx/artprov.h>
@@ -9,7 +9,7 @@
 	<wx/image.h>
 	<wx/string.h>
 
-1245800098 c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachinemain.h
+1245800858 c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachinemain.h
 	<wx/stattext.h>
 	<wx/menu.h>
 	<wx/textctrl.h>
@@ -1022,12 +1022,12 @@
 	"wx/defs.h"
 	"wx/dialog.h"
 
-1245797172 c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\turingmachine.h
+1245800858 c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\turingmachine.h
 	<string>
 	<sstream>
 	"tape.h"
 
-1245797172 c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\tape.h
+1245800858 c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\tape.h
 	<string>
 
 1221480592 c:\sourcecode\libraries\wxwidgets2.8\include\wx\msgdlg.h
@@ -1116,18 +1116,18 @@
 1221480592 c:\sourcecode\libraries\wxwidgets2.8\include\wx\imagiff.h
 	"wx/image.h"
 
-1245797172 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\tape.cpp
+1245800858 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\tape.cpp
 	"tape.h"
 
-1245797172 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\turingmachine.cpp
+1245800858 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\turingmachine.cpp
 	"turingMachine.h"
 
-1245798582 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachineapp.cpp
+1245800858 source:c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachineapp.cpp
 	"simpleTuringMachineApp.h"
 	"simpleTuringMachineMain.h"
 	<wx/image.h>
 
-1245798585 c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachineapp.h
+1245800858 c:\documents and settings\jimmy\my documents\projects\simpleturingmachine\simpleturingmachineapp.h
 	<wx/app.h>
 
 1221480592 c:\sourcecode\libraries\wxwidgets2.8\include\wx\app.h

@@ -98,8 +98,8 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     wxMenu* Menu1;
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
-    
-    Create(parent, id, _("simple Turing Machine"), wxDefaultPosition, wxDefaultSize, wxCAPTION|wxCLOSE_BOX, _T("id"));
+
+    Create(parent, id, _("simple Turing Machine"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
     SetClientSize(wxSize(514,244));
     {
     	wxIcon FrameIcon;
@@ -124,12 +124,12 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     tape3right = new wxTextCtrl(panel1, ID_TEXTCTRL9, wxEmptyString, wxPoint(266,104), wxSize(240,27), wxTE_READONLY|wxTE_LEFT, wxDefaultValidator, _T("ID_TEXTCTRL9"));
     velocidade = new wxSlider(panel1, ID_VELOCIDADE, 6, 1, 10, wxPoint(432,160), wxSize(72,19), wxSL_INVERSE, wxDefaultValidator, _T("ID_VELOCIDADE"));
     velocidadeLabel = new wxStaticText(panel1, ID_STATICTEXT1, _("Velocidade: 1.0X"), wxPoint(432,152), wxSize(72,11), 0, _T("ID_STATICTEXT1"));
-    wxFont velocidadeLabelFont(6,wxSWISS,wxFONTSTYLE_NORMAL,wxNORMAL,false,_T("Sans"),wxFONTENCODING_DEFAULT);
+    wxFont velocidadeLabelFont(6,wxSWISS,wxFONTSTYLE_NORMAL,wxNORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     velocidadeLabel->SetFont(velocidadeLabelFont);
     Exec = new wxButton(panel1, ID_EXEC, _("Executar"), wxPoint(8,152), wxSize(80,34), 0, wxDefaultValidator, _T("ID_EXEC"));
     ExecPasso = new wxButton(panel1, ID_EXECPASSO, _("Executar Passo"), wxPoint(88,152), wxSize(120,34), 0, wxDefaultValidator, _T("ID_EXECPASSO"));
     info = new wxStaticText(panel1, ID_STATICTEXT2, wxEmptyString, wxPoint(216,152), wxSize(208,32), 0, _T("ID_STATICTEXT2"));
-    wxFont infoFont(8,wxSWISS,wxFONTSTYLE_NORMAL,wxNORMAL,false,_T("Sans"),wxFONTENCODING_DEFAULT);
+    wxFont infoFont(8,wxSWISS,wxFONTSTYLE_NORMAL,wxNORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     info->SetFont(infoFont);
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
@@ -179,7 +179,7 @@ simpleTuringMachineFrame::simpleTuringMachineFrame(wxWindow* parent,wxWindowID i
     Timer1.Start(1000, false);
     FileDialog1 = new wxFileDialog(this, _("Selecione a MT codificada"), wxEmptyString, wxEmptyString, _("MT codificada (*.ctm)|*.ctm"), wxFD_DEFAULT_STYLE, wxDefaultPosition, wxDefaultSize, _T("wxFileDialog"));
     Center();
-    
+
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_TOP|wxEVT_SCROLL_BOTTOM|wxEVT_SCROLL_LINEUP|wxEVT_SCROLL_LINEDOWN|wxEVT_SCROLL_PAGEUP|wxEVT_SCROLL_PAGEDOWN|wxEVT_SCROLL_THUMBTRACK|wxEVT_SCROLL_THUMBRELEASE|wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
     Connect(ID_VELOCIDADE,wxEVT_SCROLL_CHANGED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnvelocidadeCmdScroll);
     Connect(ID_EXEC,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&simpleTuringMachineFrame::OnExecClick);
@@ -278,7 +278,7 @@ void simpleTuringMachineFrame::OnvelocidadeCmdScroll(wxScrollEvent& event)
 {
     this->velMult = ((float)this->velocidade->GetValue() * 200);
     Timer1.Stop();
-    Timer1.Start(velMult, false);
+    Timer1.Start((int)velMult, false);
     velMult = velMult/(float)1000;
     velMult = 2.2 - velMult;
     wxString s;

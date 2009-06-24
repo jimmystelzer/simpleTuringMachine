@@ -5,7 +5,7 @@
 		<centered>1</centered>
 		<icon>./res/stm_16x16.png</icon>
 		<size>514,244</size>
-		<style>wxCAPTION|wxCLOSE_BOX</style>
+		<style>wxDEFAULT_DIALOG_STYLE</style>
 		<object class="wxPanel" name="ID_PANEL1" variable="panel1" member="yes">
 			<pos>32,80</pos>
 			<size>514,248</size>
@@ -98,7 +98,7 @@
 					<weight>normal</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face>Sans</face>
+					<face>DejaVu Sans</face>
 				</font>
 			</object>
 			<object class="wxButton" name="ID_EXEC" variable="Exec" member="yes">
@@ -123,7 +123,7 @@
 					<weight>normal</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face>Sans</face>
+					<face>DejaVu Sans</face>
 				</font>
 			</object>
 		</object>
